@@ -1,0 +1,28 @@
+import time
+
+default = 1234
+current_balane = 90442.43
+print("Welcome to Univelcity Bank Plc")
+pin = int(input("Please enter your pin to continue:" ))
+print("Please wait........")
+time.sleep(2)
+print("Verifying pin.........")
+time.sleep(2)
+if pin == default:
+    print("""Please enter amount to withdraw without the 'N' sign: |N1000| |N2000| |N5000| |N10000| |others|:""")
+    amount = input("Amount:")
+    if amount.lower == "others":
+        amount = float(input("Please enter amount:"))
+    amount = float(amount)
+    if amount <= current_balane:
+        print("Withdrawal processing...........")
+        time.sleep(3)
+        current_balane-=amount
+        print('Please take your cash')
+        print(f"Your remaining balance is {current_balane}")
+    else:
+        print("Please wait...")
+        time.sleep(2)
+        print("Insufficient funds")
+else:
+    print("incorrect pin")
